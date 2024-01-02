@@ -24,7 +24,7 @@ def save_to_file(response,i):
         with open(filename, "r") as file:
             print(filename)
             data =   json.load(file)
-            print(data)
+            # print(data)
             saveData = data
             saveData[datetime.datetime.now().strftime("%H:%M") ] = content
     else:
@@ -38,12 +38,12 @@ def create_Calls():
      
     
     for i in indexes:
-        print('e')
+        # print('e')
 
         response =  fetch_data(i)
         while response.status_code != 200 :
-           print('ddd')
-           time.sleep(2)
+        #    print('ddd')
+           time.sleep(1)
            response =   fetch_data(i)
         save_to_file(response,i)
         # print('d')
